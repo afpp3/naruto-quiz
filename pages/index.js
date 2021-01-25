@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <>
       <Meta
-        url="https://www.alura.com.br/"
+        url="https://naruto-quiz.afpp3.vercel.app/"
         title={db.title}
         title={db.title}
         description={db.description}
@@ -61,7 +61,7 @@ export default function Home() {
           </Widget>
           <Footer />
         </QuizContainer>
-        <GitHubCorner projectUrl="https://github.com/afpp3" />
+        <GitHubCorner projectUrl="https://github.com/afpp3/naruto-quiz" />
       </QuizBackground>
     </>
   );
