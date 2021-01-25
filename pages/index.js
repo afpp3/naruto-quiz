@@ -31,7 +31,7 @@ export default function Home() {
         title={db.title}
         title={db.title}
         description={db.description}
-        image={db.image}
+        image={db.bg}
       />
 
       <QuizBackground backgroundImage={db.bg}>

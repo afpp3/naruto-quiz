@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const Meta = ({ children, url, title, description, image }) => (
+const Meta = ({ url, title, description, image }) => (
   <Head>
     <title>{title}</title>
     <meta property="og:url" content={url} />
