@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import db from '../db.json';
 import Meta from '../src/components/Meta';
@@ -5,6 +6,8 @@ import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import Button from '../src/components/Button';
+import Input from '../src/components/Input';
 
 const BackgroundImage = styled.div`
   flex: 1;
@@ -45,6 +48,9 @@ export default function Home() {
                 Teste seus conhecimentos sobre o univero de Naruto e se divirta
                 jogando nosso Quiz :)
               </p>
+
+              <Input placeholder="Diga seu nome para jogar" />
+              <Button href="/quiz">Jogar</Button>
             </Widget.Content>
           </Widget>
 
