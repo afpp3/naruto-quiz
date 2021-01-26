@@ -1,4 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import Head from 'next/head';
 import db from '../db.json';
 
 const GlobalStyle = createGlobalStyle`
@@ -29,11 +30,23 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const theme = db.theme;
+const {theme} = db;
 
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <title>{db.title}</title>
+        <meta property="og:url" content={db.url} />
+        <meta property="og:title" content={db.title} />
+        <meta property="og:description" content={db.description} />
+        <meta property="og:image" content={db.bg} />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />
