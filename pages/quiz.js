@@ -1,25 +1,22 @@
-import QuizBackground from '../src/components/QuizBackground';
-import Widget from '../src/components/Widget';
 import db from '../db.json';
-import { QuizContainer } from '.';
-import Button from '../src/components/Button';
+import QuizBackground from '../src/components/QuizBackground';
+import QuizContainer from '../src/components/QuizContainer';
+import QuestionWidget from '../src/components/QuestionWidget';
+import LoadingWidget from '../src/components/LoadingWidget';
 
 function Quiz() {
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 900);
+  }, []);
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
-        <Widget>
-          <Widget.Header>
-            <Button href="/"> Voltar </Button>
-            <h1>Pergunta 1 de 5</h1>
-          </Widget.Header>
-          <Widget.Content>
-            <p>Alternativa 1</p>
-            <p>Alternativa 2</p>
-            <p>Alternativa 3</p>
-            <p>Alternativa 4</p>
-          </Widget.Content>
-        </Widget>
+        {loading ? <LoadingWidget /> : <QuestionWidget />}
       </QuizContainer>
     </QuizBackground>
   );

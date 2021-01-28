@@ -7,24 +7,9 @@ import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-import PlayerForm from '../src/components/PlayerForm';
-
-const BackgroundImage = styled.div`
-  flex: 1;
-  background: url(${db.bg}) no-repeat center center;
-`;
-
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
+import Input from '../src/components/Form/Input';
+import Button from '../src/components/Form/Button';
+import QuizContainer from '../src/components/QuizContainer';
 
 export default function Home() {
   const router = useRouter();
@@ -32,9 +17,8 @@ export default function Home() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
-    // setName(event.target)
     router.push(`/quiz?name=${name}`);
+    setName(name);
   }
 
   return (
@@ -58,11 +42,17 @@ export default function Home() {
                 Teste seus conhecimentos sobre o univero de Naruto e se divirta
                 jogando nosso Quiz :)
               </p>
-              <PlayerForm
-                onSubmit={handleSubmit}
-                setName={setName}
-                name={name}
-              ></PlayerForm>
+              <form onSubmit={handleSubmit}>
+                <Input
+                  name="username"
+                  placeholder="Digite seu nome para poder jogar"
+                  onChange={({ target }) => setName(target.value)}
+                  value={name}
+                />
+                <Button type="submit" disabled={name.length === 0}>
+                  Jogar
+                </Button>
+              </form>
             </Widget.Content>
           </Widget>
 
