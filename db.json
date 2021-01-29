@@ -5,29 +5,81 @@
   "questions": [
     {
       "image": "https://sm.ign.com/t/ign_br/screenshot/default/narutinho_rq9u.1280.jpg",
-      "title": "Como fazer um seletor por id via CSS?",
+      "title": "Qual o nome do primeiro sensei de naruto",
       "description": "Essa é pra aquecer",
-      "answer": 2,
+      "answer": 0,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "Iruka",
+        "Kakashi",
+        "Jiraya",
+        "Sarutobi"
+      ]
+    },
+    {
+      "image": "",
+      "title": "Qual o nome do Irmão do Sasuke",
+      "description": "Faz tempo em haha",
+      "answer": 3,
+      "alternatives": [
+        "Sai",
+        "Naruto",
+        "Deidara",
+        "Itachi",
+        "Madara"
       ]
     },
     {
       "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
+      "title": "Quem são os integrantes do time 7",
+      "description": "Faz tempo em haha",
+      "answer": 3,
+      "alternatives": [
+        "Neji, Rock Lee, Tenten",
+        "Hinata, Shino, Kiba",
+        "Ino, Shikamarum Choji",
+        "Naruto, Sasuke, Sakura"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual o nome do segundo Hokage",
       "description": "Faz tempo em haha",
       "answer": 0,
       "alternatives": [
-        "background: linear-gradient(#e66465, #9198e5);",
-        "background: gradient(#e66465, #9198e5);"
+        "Tobirama Senju",
+        "Hiruzen Sarutobi",
+        "Hashirama Senju",
+        "Minato Namikaze"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual desses ninjas se tornou jonin primeiro",
+      "description": "Faz tempo em haha",
+      "answer": 1,
+      "alternatives": [
+        "Ino",
+        "Neji",
+        "Choji",
+        "Kiba"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual a afinidade elemental do ninja Naruto? ",
+      "description": "Faz tempo em haha",
+      "answer": 3,
+      "alternatives": [
+        "Água",
+        "Fogo",
+        "Raio",
+        "Vento",
+        "Terra"
       ]
     }
   ],
   "external": [
-    ""
+    "https://aluraquiz-css.omariosouto.vercel.app/"
   ],
   "theme": {
     "colors": {

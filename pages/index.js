@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
 import db from '../db.json';
 import Meta from '../src/components/Meta';
@@ -10,6 +10,7 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import Input from '../src/components/Form/Input';
 import Button from '../src/components/Form/Button';
 import QuizContainer from '../src/components/QuizContainer';
+import Link from '../src/components/Link';
 
 export default function Home() {
   const router = useRouter();
@@ -33,7 +34,16 @@ export default function Home() {
 
       <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
-          <Widget>
+          <Widget
+            as={motion.section}
+            transition={{ delay: 0.2, duration: 1 }}
+            variants={{
+              show: { opacity: 1, y: '0' },
+              hidden: { opacity: 0, y: '100%' },
+            }}
+            initial="hidden"
+            animate="show"
+          >
             <Widget.Header>
               <h1>{db.title}</h1>
             </Widget.Header>
@@ -56,18 +66,52 @@ export default function Home() {
             </Widget.Content>
           </Widget>
 
-          <Widget>
+          <Widget
+            as={motion.section}
+            transition={{ delay: 0.8, duration: 1 }}
+            variants={{
+              show: { opacity: 1 },
+              hidden: { opacity: 0 },
+            }}
+            initial="hidden"
+            animate="show"
+          >
             <Widget.Header>
               <h1>Quizes da galera</h1>
             </Widget.Header>
             <Widget.Content>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Repudiandae odit distinctio quasi magnam soluta. Nesciunt
-              </p>
+              <ul>
+                {db.external.map((link) => {
+                  const [projectName, githubUser] = link
+                    .replace(/\//g, '')
+                    .replace('https:', '')
+                    .replace('.vercel.app', '')
+                    .split('.');
+
+                  return (
+                    <li key={link}>
+                      <Widget.Topic
+                        as={Link}
+                        href={`/quiz/${projectName}___${githubUser}`}
+                      >
+                        {`${githubUser}/${projectName}`}
+                      </Widget.Topic>
+                    </li>
+                  );
+                })}
+              </ul>
             </Widget.Content>
           </Widget>
-          <Footer />
+          <Footer
+            as={motion.footer}
+            transition={{ delay: 1.4, duration: 1 }}
+            variants={{
+              show: { opacity: 1 },
+              hidden: { opacity: 0 },
+            }}
+            initial="hidden"
+            animate="show"
+          />
         </QuizContainer>
         <GitHubCorner projectUrl="https://github.com/afpp3/naruto-quiz" />
       </QuizBackground>
