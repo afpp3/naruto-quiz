@@ -51,6 +51,25 @@
         "Hashirama Senju",
         "Minato Namikaze"
       ]
+    },
+    {
+      "image": "https://media.giphy.com/media/sxuaGEgzfS5W0/giphy.gif",
+      "title": "Qual o ninja mais brabo de Konoha?",
+      "description": "Única resposta possível",
+      "answer": 0,
+      "alternatives": [
+        "Thifane"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/Yy7BiuPbeaGXu/giphy.gif",
+      "title": "Ainda quer sair comigo? (Agora pra valer mesmo KKKK)",
+      "description": "Pra qualquer lugar",
+      "answer": 0,
+      "alternatives": [
+        "Sim",
+        "Não"
+      ]
     }
   ],
   "external": [
