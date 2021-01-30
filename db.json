@@ -16,7 +16,7 @@
       ]
     },
     {
-      "image": "",
+      "image": "https://media.giphy.com/media/e4NbcUXXsmFwI/giphy.gif",
       "title": "Qual o nome do Irmão do Sasuke",
       "description": "Faz tempo em haha",
       "answer": 3,
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "image": "https://media.giphy.com/media/xVxio2tNLAM5q/giphy.gif",
       "title": "Quem são os integrantes do time 7",
       "description": "Faz tempo em haha",
       "answer": 3,
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "image": "https://sm.ign.com/ign_br/screenshot/default/wp2581462_mv7c.png",
       "title": "Qual o nome do segundo Hokage",
       "description": "Faz tempo em haha",
       "answer": 0,
@@ -50,31 +50,6 @@
         "Hiruzen Sarutobi",
         "Hashirama Senju",
         "Minato Namikaze"
-      ]
-    },
-    {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Qual desses ninjas se tornou jonin primeiro",
-      "description": "Faz tempo em haha",
-      "answer": 1,
-      "alternatives": [
-        "Ino",
-        "Neji",
-        "Choji",
-        "Kiba"
-      ]
-    },
-    {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Qual a afinidade elemental do ninja Naruto? ",
-      "description": "Faz tempo em haha",
-      "answer": 3,
-      "alternatives": [
-        "Água",
-        "Fogo",
-        "Raio",
-        "Vento",
-        "Terra"
       ]
     }
   ],

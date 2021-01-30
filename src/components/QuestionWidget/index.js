@@ -6,12 +6,15 @@ import AlternativesForm from '../AlternativesForm';
 import Button from '../Form/Button';
 import { ReactComponent as CorrectAnswer } from '../../../public/assets/correct-answer.svg';
 import { ReactComponent as WrongAnswer } from '../../../public/assets/wrong-answer.svg';
+import BackLinkArrow from '../BackLinkArrow';
+import LoadingWidget from '../LoadingWidget';
 
 const QuestionWidget = ({ setScreenState, screenStates }) => {
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const [selectedAlternarive, setSelectedAlternative] = React.useState(null);
   const [questionSubmited, setQuestionSubmited] = React.useState(false);
   const [results, setResults] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
 
   const totalQuestions = db.questions.length;
   const questionIndex = currentQuestion;
@@ -23,7 +26,11 @@ const QuestionWidget = ({ setScreenState, screenStates }) => {
   const handleSubmiteAnswer = () => {
     const nextQuestion = questionIndex + 1;
     if (nextQuestion < totalQuestions) {
-      setCurrentQuestion(nextQuestion);
+      setLoading(true);
+      setTimeout(() => {
+        setCurrentQuestion(nextQuestion);
+        setLoading(false);
+      }, 1 * 1500);
     } else {
       setScreenState(screenStates.RESULT);
     }
@@ -33,6 +40,7 @@ const QuestionWidget = ({ setScreenState, screenStates }) => {
     setResults([...results, result]);
   };
 
+  if (loading) return <LoadingWidget />;
   return (
     <Widget
       as={motion.section}
@@ -45,6 +53,7 @@ const QuestionWidget = ({ setScreenState, screenStates }) => {
       animate="show"
     >
       <Widget.Header>
+        <BackLinkArrow href="/" />
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
       </Widget.Header>
       <img
@@ -71,7 +80,7 @@ const QuestionWidget = ({ setScreenState, screenStates }) => {
               handleSubmiteAnswer();
               setQuestionSubmited(false);
               setSelectedAlternative(null);
-            }, 2000);
+            }, 1 * 2000);
           }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
@@ -99,8 +108,12 @@ const QuestionWidget = ({ setScreenState, screenStates }) => {
             );
           })}
 
-          {questionSubmited && isCorrect && <CorrectAnswer />}
-          {questionSubmited && !isCorrect && <WrongAnswer />}
+          {questionSubmited && isCorrect && (
+            <CorrectAnswer style={{ display: 'block', margin: 'auto' }} />
+          )}
+          {questionSubmited && !isCorrect && (
+            <WrongAnswer style={{ display: 'block', margin: 'auto' }} />
+          )}
 
           <Button
             type="submit"

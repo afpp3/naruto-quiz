@@ -18,7 +18,7 @@ function Quiz() {
   React.useEffect(() => {
     const timeout = setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1000);
+    }, 2 * 1000);
 
     return () => clearTimeout(timeout);
   }, []);
